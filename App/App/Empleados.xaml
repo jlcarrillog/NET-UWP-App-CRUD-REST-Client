@@ -22,6 +22,7 @@
             GridLinesVisibility="Horizontal"
             CanUserReorderColumns="True" 
             CanUserResizeColumns="True"
+            ItemsSource="{Binding}"
             SelectionMode="Single">
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" FontSize="16" />

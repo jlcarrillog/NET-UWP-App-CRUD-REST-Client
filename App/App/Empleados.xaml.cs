@@ -21,7 +21,7 @@ namespace App
         private async void Datos()
         {
             Model = await new EmpleadosDataService().ToList();
-            dataGrid.ItemsSource = Model;
+            this.DataContext = Model;
             LoadingControl.IsActive = false;
         }
         private void Detalles(object sender, RoutedEventArgs e)
