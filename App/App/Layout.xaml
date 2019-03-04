@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="App.Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <NavigationView
+            Name="Navigation"
+            IsBackButtonVisible="Collapsed"
+            SelectionChanged="Navigation_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Name="Inicio" Tag="Inicio" Icon="Home" Content="Inicio"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Secciones"/>
+                <NavigationViewItem Name="Empleados" Tag="Empleados" Content="Empleados">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
+            </NavigationView.AutoSuggestBox>
+            
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="24,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <!--<ColumnDefinition/>-->
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding}" Style="{StaticResource HeaderTextBlockStyle}"/>
+                        <!--<CommandBar Grid.Column="1"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    DefaultLabelPosition="Right"
+                                    Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+                            <AppBarButton Label="Refresh" Icon="Refresh"/>
+                            <AppBarButton Label="Import" Icon="Import"/>
+                        </CommandBar>-->
+                    </Grid>
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
+
+            <!--<NavigationView.PaneFooter>
+                <HyperlinkButton x:Name="MoreInfoBtn"
+                             Content="More info"
+                             Click="More_Click"
+                             Margin="12,0"/>
+            </NavigationView.PaneFooter>-->
+
+            <Frame x:Name="rootFrame" NavigationFailed="RootFrame_NavigationFailed">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>
