@@ -1,13 +1,10 @@
 ﻿<Page
-    x:Class="App.EmpleadosCreate"
+    x:Class="App.Views.EmpleadosEdit"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:App.Views"
+    xmlns:local="using:App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    
-    xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
-    
     mc:Ignorable="d">
 
     <Grid>
@@ -18,16 +15,16 @@
 
         <StackPanel Grid.Row="0" Margin="30,16,30,0">
             <TextBlock
-                Text="Nuevo"
+                Text="Editar"
                 Style="{StaticResource SubheaderTextBlockStyle}"/>
 
-            <TextBox 
+            <TextBox
                 Name="Nombre"
                 Header="Nombre"
                 Margin="0,24,0,0"
                 MaxLength="250"
                 Width="400"
-                Text="{Binding Model.Nombre, Mode=TwoWay}"
+                Text="{Binding Nombre, Mode=TwoWay}"
                 HorizontalAlignment="Left"
                 TextChanged="Nombre_TextChanged"
                 InputScope="PersonalFullName"/>
@@ -38,7 +35,7 @@
                 Margin="0,24,0,0"
                 MaxLength="2"
                 Width="400"
-                Text="{Binding Model.Edad, Mode=TwoWay}"
+                Text="{Binding Edad, Mode=TwoWay}"
                 HorizontalAlignment="Left"
                 TextChanged="Edad_TextChanged"
                 InputScope="Number" />
@@ -53,7 +50,7 @@
             Grid.Row="1"
             OverflowButtonVisibility="Collapsed"
             DefaultLabelPosition="Right">
-            <AppBarButton Icon="ViewAll" Label="Todos" Click="Cancelar"/>
+            <AppBarButton Icon="ViewAll" Label="Todos" Click="Cancelar" Tag="{Binding EmpleadoID}"/>
         </CommandBar>
 
         <ProgressRing Name="LoadingControl" IsActive="True" Height="100" Width="100"/>

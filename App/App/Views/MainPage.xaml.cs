@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace App
+namespace App.Views
 {
     public sealed partial class MainPage : Page
     {
@@ -22,7 +22,7 @@ namespace App
             if (args.IsSettingsSelected)
             {
                 Navigation.Header = "Configuración";
-                rootFrame.Navigate(typeof(SampleSettings));
+                rootFrame.Navigate(typeof(Settings));
             }
             else
             {

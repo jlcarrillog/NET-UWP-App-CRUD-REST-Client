@@ -7,7 +7,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace App
+namespace App.Views
 {
     public sealed partial class EmpleadosDetails : Page
     {

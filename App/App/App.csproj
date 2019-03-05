@@ -18,6 +18,13 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>App_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -120,16 +127,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\EmpleadosDataService.cs" />
-    <Compile Include="Empleados.xaml.cs">
+    <Compile Include="Views\Empleados\Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadosCreate.xaml.cs">
+    <Compile Include="Views\Empleados\EmpleadosCreate.xaml.cs">
       <DependentUpon>EmpleadosCreate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadosDetails.xaml.cs">
+    <Compile Include="Views\Empleados\EmpleadosDetails.xaml.cs">
       <DependentUpon>EmpleadosDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadosEdit.xaml.cs">
+    <Compile Include="Views\Empleados\EmpleadosEdit.xaml.cs">
       <DependentUpon>EmpleadosEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
@@ -137,8 +144,8 @@
     </Compile>
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleSettings.xaml.cs">
-      <DependentUpon>SampleSettings.xaml</DependentUpon>
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -162,19 +169,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Empleados.xaml">
+    <Page Include="Views\Empleados\Empleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmpleadosCreate.xaml">
+    <Page Include="Views\Empleados\EmpleadosCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmpleadosDetails.xaml">
+    <Page Include="Views\Empleados\EmpleadosDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmpleadosEdit.xaml">
+    <Page Include="Views\Empleados\EmpleadosEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,7 +189,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SampleSettings.xaml">
+    <Page Include="Views\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
